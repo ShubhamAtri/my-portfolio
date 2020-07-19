@@ -15,7 +15,6 @@
 package com.google.sps.servlets;
 
 import java.util.*; 
-import com.google.sps.data.Comments;
 import com.google.gson.Gson;
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
