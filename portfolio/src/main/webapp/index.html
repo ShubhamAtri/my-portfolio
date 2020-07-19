@@ -12,10 +12,6 @@
         <p>Hi everyone!</p>
         <p>I am a third year undergraduate student. I am persuing my B.Tech. in Computer Science and Engineering from IIT Bombay.</p> 
         <p>Hope to get along well with everyone during next 8 weeks.</p>
-        
-        <!-- <p>Click here to get a random message:</p>
-        <button onclick="addRandomGreeting()">Hello</button>
-        <div id="greeting-container"></div> -->
 
         <h2>My favourite movies/animes</h2>
       
@@ -55,6 +51,19 @@
         <li> <a href="https://github.com/ShubhamAtri">Github</a> </li>
         <li> <a href="https://www.linkedin.com/in/shubham-atri-2455a91a7/">LinkedIn</a> </li>
         </ol>
+
+        <h2>Provide Feedback</h2>
+        <form action="/submit-feedback" method="POST">
+
+            <p>Enter your Feedback:</p>
+            <textarea name="comment"></textarea>
+            <br/><br/>
+
+            <input type="submit" />
+        </form>
+
+        <h2>View Comments</h2>
+        <ul id="comments-container"></ul>
     </div>
   </body>
 </html>

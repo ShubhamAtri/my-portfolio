@@ -12,25 +12,28 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-/**
- * Adds a random greeting to the page.
- */
-// function addRandomGreeting() {
-//   const greetings =
-//       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
-
-//   // Pick a random greeting.
-//   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
-
-//   // Add it to the page.
-//   const greetingContainer = document.getElementById('greeting-container');
-//   greetingContainer.innerText = greeting;
-// }
-
-// load initial image
+// load initial image and comments
 function init() {
   var slideIndex = 1;
   showSlides(slideIndex);
+  getCommentsUsingArrowFunctions();
+}
+
+function getCommentsUsingArrowFunctions() {
+  fetch('/data').then(response => response.json()).then((Comments) => {
+    const commentsElement = document.getElementById('comments-container');
+    commentsElement.innerHTML = '';
+    Comments.forEach(function(Comment) {
+        commentsElement.appendChild(createListElement(Comment));
+    });
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
 
 // Next/previous controls
